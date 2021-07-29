@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "stylelint": "stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
     "next": "11.0.1",
