@@ -1,11 +1,14 @@
+import { GetStaticProps } from 'next'
 import React, { useState } from 'react'
 import { Button, Htag, P, Rating, Tag } from '../components'
-import { Layout } from '../layout/Layout'
+import { withLayout } from '../layout/Layout'
+import axios from 'axios'
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	const [rating, setRating] = useState<number>(4)
+
 	return (
-		<Layout>
+		<>
 			<Htag tag="h1">Текст</Htag>
 			<Button appearance="primary" arrow="right">
 				Кнопка
@@ -22,6 +25,16 @@ export default function Home(): JSX.Element {
 				Small green
 			</Tag>
 			<Rating rating={rating} isEditable setRating={setRating} />
-		</Layout>
+		</>
 	)
+}
+
+export default withLayout(Home)
+
+export const getStaticProps: GetStaticProps = async () => {
+	const firstCategory = 0
+	const { data: menu } = await axios.post(process.env.NEXT_PUBPLIC_DOMAIN + '/api/top-page/find')
+	return {
+		props: { menu, firstCategory }
+	}
 }
