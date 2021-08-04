@@ -5,7 +5,7 @@ import { Input } from '../Input/Input'
 import { Button } from '../Button/Button'
 import { useState } from 'react'
 import GlassIcon from './glass.svg'
-import router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 	const [search, setSearch] = useState<string>('')
