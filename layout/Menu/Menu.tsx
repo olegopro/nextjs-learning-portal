@@ -2,7 +2,7 @@ import styles from './Menu.module.css'
 import cn from 'classnames'
 import { useContext } from 'react'
 import { AppContext } from '../../context/app.context'
-import { PageItem } from '../../interfaces/menu.interface'
+import { FirstLevelMenuItem, PageItem } from '../../interfaces/menu.interface'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { firstLevelMenu } from '../../helpers/helpers'
@@ -75,7 +75,7 @@ export const Menu = (): JSX.Element => {
 
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return pages.map(p => (
-			<Link href={`/${route}/${p.alias}`}>
+			<Link href={`/${route}/${p.alias}`} key={p._id}>
 				<a
 					className={cn(styles.thirdLevel, {
 						[styles.thirdLevelActive]: `/${route}/${p.alias}` == router.asPath
