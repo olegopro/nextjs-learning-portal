@@ -1,8 +1,13 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"lib": ["dom", "dom.iterable", "esnext"],
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
 		"allowJs": false,
+		"noImplicitAny": false,
 		"skipLibCheck": true,
 		"strict": true,
 		"strictPropertyInitialization": false,
@@ -15,6 +20,13 @@
 		"isolatedModules": true,
 		"jsx": "preserve"
 	},
-	"include": ["next-env.d.ts", "svg.d.ts", "**/*.ts", "**/*.tsx", "components/Rating/Rating copy.jsx"],
-	"exclude": ["node_modules"]
+	"include": [
+		"next-env-custom.d.ts",
+		"images.d.ts",
+		"**/*.ts",
+		"**/*.tsx"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }
