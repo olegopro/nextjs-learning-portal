@@ -1,7 +1,8 @@
-import styles from './Advantages.module.css'
-import { AdvantagesProps } from './Advantages.props'
-import React from 'react'
-import CheckIcon from './check.svg'
+import { AdvantagesProps } from './Advantages.props';
+import styles from './Advantages.module.css';
+import cn from 'classnames';
+import React from 'react';
+import CheckIcon from './check.svg';
 
 export const Advantages = ({ advantages }: AdvantagesProps): JSX.Element => {
 	return (
@@ -15,5 +16,5 @@ export const Advantages = ({ advantages }: AdvantagesProps): JSX.Element => {
 				</div>
 			))}
 		</>
-	)
-}
+	);
+};
